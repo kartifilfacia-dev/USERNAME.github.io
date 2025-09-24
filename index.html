@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>okak</title>
-  <style>
-    /* Убираем отступы */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>okak</title>
+    <style>
+            /* CSS */
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
-    body {
-      background: url('https://www.pravilamag.ru/upload/img_cache/6b5/6b5117915527810f6a2d20a9e38d5f46_ce_590x394x0x121.jpg') no-repeat center center;
-      background-size: cover;
-    }
-  </style>
+.site-wrapper {
+  min-height: 100vh;              /* растянуть по высоте экрана */
+  background-image: url('https://www.pravilamag.ru/upload/img_cache/6b5/6b5117915527810f6a2d20a9e38d5f46_ce_590x394x0x121.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;         /* заполнить экран, часть может обрезаться */
+  background-position: center center;
+  /* Не используем background-attachment: fixed — на мобильных часто ломает рендер */
+}
+
+/* Для мобильных — можно подставлять более "фокусированную" позицию и меньший файл */
+@media (max-width: 768px) {
+  .site-wrapper {
+    background-image: url('https://www.pravilamag.ru/upload/img_cache/6b5/6b5117915527810f6a2d20a9e38d5f46_ce_590x394x0x121.jpg'); /* маленькая версия */
+    background-position: center top; /* чаще нужно сдвинуть кадр вверх */
+    background-size: cover;          /* или contain если нужно целиком показать картинку */
+  }
+}
+
+/* Ещё вариант: если хотите, чтобы некоторый элемент всегда был виден (например лицо/фокус) —
+   используйте background-position в процентах, например 50% 30% */
+
+    </style>
 </head>
 <body>
+    <!-- HTML -->
+<body>
+  <div class="site-wrapper">
+    <!-- Контент -->
+  </div>
+</body>
+
 </body>
 </html>
 
